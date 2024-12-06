@@ -17,7 +17,7 @@ const foundWord = dictionary.find((entry)=>entry.word.toLowerCase()=== searchTer
 if(foundWord){
   setResult(foundWord.meaning);
 }else{
-  setResult("Word not found in the dictionary");
+  setResult("Word not found in the dictionary.");
 }
 };
 
@@ -29,7 +29,7 @@ if(foundWord){
     type = "text"
     value = {searchTerm}
     onChange ={(e)=> setSearchTerm(e.target.value)}
-    placeholder ="Enter a word"
+    placeholder ="Search for a word..."
     className="dictionary-input" 
      />
     
