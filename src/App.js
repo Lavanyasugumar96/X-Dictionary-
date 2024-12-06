@@ -1,22 +1,23 @@
 import React ,{useState} from 'react';
 import './App.css';
 
-const XDictionary = () =>{
+function App() {
   const[dictionary] = useState([
   { word: "React", meaning: "A JavaScript library for building user interfaces." },
 
   { word: "Component", meaning: "A reusable building block in React." },
 
-  { word: "State", meaning: "An object that stores data for a component." }
+  { word: "State", meaning: "An object that stores data for a component." },
 ]);
 
 const [searchTerm, setSearchTerm] = useState('');
 const [result, setResult]=useState('');
 const handlesearch = () =>{
-const foundWord = dictionary.find((entry)=>entry.word.toLowerCase()=== searchTerm.toLowerCase());
+const foundWord = dictionary.find(
+  (entry)=>entry.word.toLowerCase()=== searchTerm.toLowerCase()
+);
 if(foundWord){
-  setResult(`Definition:
-    ${foundWord.meaning}`);
+  setResult(foundWord.meaning);
 }else{
   setResult("Word not found in the dictionary.");
 }
@@ -30,7 +31,7 @@ if(foundWord){
     type = "text"
     value = {searchTerm}
     onChange ={(e)=> setSearchTerm(e.target.value)}
-    placeholder ="Search for a word..."
+    placeholder ="Search for a word"
     className="dictionary-input" 
      />
     
@@ -38,7 +39,7 @@ if(foundWord){
     className="dictionary-button">Search</button>
     
 </div>
-
+<h5>Definition:</h5>
 <div className="dictionary-result">
   {result}
 </div>
@@ -48,4 +49,4 @@ if(foundWord){
   );
 }
 
-export default XDictionary;
+export default App;
