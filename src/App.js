@@ -15,7 +15,8 @@ const [result, setResult]=useState('');
 const handlesearch = () =>{
 const foundWord = dictionary.find((entry)=>entry.word.toLowerCase()=== searchTerm.toLowerCase());
 if(foundWord){
-  setResult(foundWord.meaning);
+  setResult(`Definition:
+    ${foundWord.meaning}`);
 }else{
   setResult("Word not found in the dictionary.");
 }
@@ -35,7 +36,7 @@ if(foundWord){
     
     <button onClick={handlesearch}
     className="dictionary-button">Search</button>
-{/* <h3 className='class-definition'>Definition:</h3> */}
+    
 </div>
 
 <div className="dictionary-result">
