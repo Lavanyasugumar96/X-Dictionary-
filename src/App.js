@@ -35,7 +35,7 @@ if(foundWord){
     
     <button onClick={handlesearch}
     className="dictionary-button">Search</button>
-<h3 className='class-definition'>Definition:</h3>
+{/* <h3 className='class-definition'>Definition:</h3> */}
 </div>
 
 <div className="dictionary-result">
